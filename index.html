@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
+    <title>Password Generator App</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Generate a <br><span class="highlight">random password</span></h1>
-        <p>Never use an insecure password again.</p>
+        <p class="subtitle">Never use an insecure password again.</p>
         
-        <button id="generate-btn">Generate passwords</button>
+        <div class="controls-container">
+            <button id="generate-btn">Generate passwords</button>
+            
+            <div class="input-group">
+                <input type="number" id="length-input" value="15" min="8" max="25">
+                <label for="length-input"><i>Length</i></label>
+            </div>
+        </div>
         
         <hr>
 

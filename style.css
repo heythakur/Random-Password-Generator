@@ -3,11 +3,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif; /* A clean modern font */
+    
+    /* ADD OR UPDATE THIS FONT LINE */
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.01em; /* Slight reduction for Inter, matching the mockup */
 }
 
 body {
-    background-color: #1F2937; /* Dark navy background */
+    background-color: #1F2937;
     color: #FFFFFF;
     display: flex;
     justify-content: center;
@@ -16,39 +19,86 @@ body {
 }
 
 .container {
-    width: 450px;
+    width: 480px;
     padding: 20px;
 }
 
 h1 {
     font-size: 2.5rem;
-    line-height: 1.2;
+    line-height: 1.1;
     margin-bottom: 10px;
 }
 
 .highlight {
-    color: #55F991; /* The green from your screenshot */
+    color: #55F991;
 }
 
-p {
+.subtitle {
     color: #D1D5DB;
     font-size: 1.1rem;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+}
+
+/* Controls Layout */
+.controls-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 10px;
 }
 
 button {
     background-color: #10B981;
     color: white;
     border: none;
-    padding: 12px 24px;
+    height: 43px; 
+    padding: 0 28px; 
     border-radius: 6px;
     font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    font-weight: 500;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
 }
 
 button:hover {
     background-color: #059669;
+}
+
+/* Length Input & Label side-by-side */
+.input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+input[type="number"] {
+    background-color: #273549;
+    border: 1px solid #374151;
+    color: #55F991;
+    height: 43px; 
+    width: 60px;
+    padding: 8px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    outline: none;
+}
+
+/* Hide spin buttons */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+label {
+    color: #D1D5DB;
+    font-size: 0.9rem;
+    letter-spacing: normal; /* Labels don't need the spacing fix */
 }
 
 hr {
@@ -57,6 +107,7 @@ hr {
     margin: 35px 0;
 }
 
+/* Password Boxes */
 .password-wrapper {
     display: flex;
     gap: 20px;
@@ -71,7 +122,12 @@ hr {
     justify-content: center;
     align-items: center;
     color: #55F991;
-    font-size: 0.9rem;
-    /* This ensures long passwords don't break the layout */
-    overflow: hidden; 
+    font-size: 0.95rem;
+    font-family: monospace; /* Passwords always look better in monospace! */
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.password-box:hover {
+    opacity: 0.8;
 }
