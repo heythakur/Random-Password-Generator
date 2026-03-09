@@ -21,23 +21,23 @@ function generatePassword(len) {
 
     if(len<8 || len>25){
         alert("Password length should be above 8 and below 25.")
-    } else {
-        let characters = ""
+        return
+    } 
+    let characters = ""
 
-        if (isSymbols && isNumbers) {
-            characters = alphabets.concat(symbols.concat(numbers))
-        } else if (isSymbols) {
-            characters = alphabets.concat(symbols)
-        } else if (isNumbers) {
-            characters = alphabets.concat(numbers)
-        } else {
-            characters = alphabets
-        }
-        for(let i=0; i<len; i++){
-                password += getRandomChar(characters)
-        }
-        return password
+    if (isSymbols && isNumbers) {
+        characters = alphabets.concat(symbols.concat(numbers))
+    } else if (isSymbols) {
+        characters = alphabets.concat(symbols)
+    } else if (isNumbers) {
+        characters = alphabets.concat(numbers)
+    } else {
+        characters = alphabets
     }
+    for(let i=0; i<len; i++){
+            password += getRandomChar(characters)
+    }
+    return password
 }
 
 function renderPassword() {
@@ -53,3 +53,20 @@ lengthInputEl.addEventListener("keydown", function() {
         renderPassword()
     }
 })
+
+function copyToClipboard(element) {
+    const passwordText = element.textContent;
+    
+    if (passwordText === "" || passwordText === "undefined") return;
+
+    navigator.clipboard.writeText(passwordText)
+    alert("Password copied to clipboard!")
+}
+
+passOneEl.addEventListener("click", function() {
+    copyToClipboard("passOneEl");
+});
+
+passTwoEl.addEventListener("click", function() {
+    copyToClipboard(passTwoEl);
+});
