@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator App</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,9 +16,20 @@
             <button id="generate-btn">Generate passwords</button>
             
             <div class="input-group">
-                <input type="number" id="length-input" value="15" min="8" max="25">
+                <input type="number" id="length-input" value="15" min="1" max="25">
                 <label for="length-input"><i>Length</i></label>
             </div>
+        </div>
+
+        <div class="settings-container">
+            <label class="checkbox-label">
+                <input type="checkbox" id="numbers-check" checked>
+                <span>Numbers</span>
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" id="symbols-check" checked>
+                <span>Symbols</span>
+            </label>
         </div>
         
         <hr>
